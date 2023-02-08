@@ -22,8 +22,6 @@ function Tasks() {
         const finish = datas.columns[destination.droppableId];
 
         if (start === finish) {
-            // Si on déplace une tâche
-            const column = datas.columns[source.droppableId];
             // On récupère les id des tâches actuelles
             const newTaskIds = Array.from(start.taskIds);
             // On remplace dans le tableau la tâche déplacée
@@ -80,11 +78,11 @@ function Tasks() {
     return (
         <div className="tasks">
             <DragDropContext onDragEnd={onDragEnd}>
-                {datas.columnOrder.map((columnId => {
+                {datas.columnOrder.map(columnId => {
                     const column = datas.columns[columnId];
-                    const tasks = column.taskIds.map(taskId => datas.tasks[taskId]);
+                    const tasks = column.taskIds.map(taskId => datas.tasks[taskId])
                     return <Column key={column.id} column={column} tasks={tasks} />
-                }))}
+                })}
             </DragDropContext>
         </div>
     )
