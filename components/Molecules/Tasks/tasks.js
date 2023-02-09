@@ -80,8 +80,8 @@ function Tasks() {
             <DragDropContext onDragEnd={onDragEnd}>
                 {datas.columnOrder.map(columnId => {
                     const column = datas.columns[columnId];
-                    const tasks = column.taskIds.map(taskId => datas.tasks[taskId])
-                    return <Column key={column.id} column={column} tasks={tasks} />
+                    const tasks = column.taskIds.map(taskId => datas.tasks[taskId]);
+                    return <Column key={column.id} column={column} tasks={tasks} />;
                 })}
             </DragDropContext>
         </div>

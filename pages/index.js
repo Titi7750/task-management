@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Tasks from '@/components/Molecules/Tasks/tasks'
+import AddTask from '@/components/Molecules/Form/addTask'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main className="main">
         <Tasks />
+        <AddTask />
       </main>
     </>
   )
