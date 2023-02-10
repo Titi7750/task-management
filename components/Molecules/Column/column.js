@@ -1,3 +1,4 @@
+import React from "react";
 import Task from "../../Atoms/Task/task";
 import { Droppable } from "react-beautiful-dnd";
 
@@ -6,11 +7,11 @@ function Column({ column, tasks }) {
         <div className="tasks_column">
             <h2>{column.title}</h2>
             <Droppable droppableId={column.id}>
-                {provider => (
+                {(provider) => (
                     <div
-                        {...provider.droppableProps}
-                        ref={provider.innerRef}
                         className="tasks_list"
+                        innerRef={provider.innerRef}
+                        {...provider.droppableProps}
                     >
                         {tasks.map((task, index) => (
                             <Task key={task.id} task={task} index={index} />

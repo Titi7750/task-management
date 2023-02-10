@@ -1,14 +1,15 @@
+import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
 function Task({ task, index }) {
     return (
         <Draggable draggableId={task.id} index={index}>
-            {provider => (
+            {(provider) => (
                 <div
                     className="tasks_item"
+                    innerRef={provider.innerRef}
                     {...provider.draggableProps}
                     {...provider.dragHandleProps}
-                    ref={provider.innerRef}
                 >
                     {task.content}
                 </div>
